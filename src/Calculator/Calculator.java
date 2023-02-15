@@ -1,5 +1,6 @@
 package Calculator;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -10,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+/* ~ Calculator Class ~ */
 public class Calculator {
 
 	private JFrame frame;
@@ -44,11 +46,12 @@ public class Calculator {
 	// JFrame
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setForeground(new Color(255, 255, 255));
 		frame.setBounds(100, 100, 305, 475);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		// Button Backspace
+		// Button Backspace: Until Length is 1
 		JButton btn_BackSpace = new JButton("\uF0E7");
 		btn_BackSpace.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -65,7 +68,7 @@ public class Calculator {
 		btn_BackSpace.setBounds(10, 82, 60, 60);
 		frame.getContentPane().add(btn_BackSpace);
 
-		// Button Clear
+		// Button Clear: Reset to 0
 		JButton btn_Clear = new JButton("C");
 		btn_Clear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -388,7 +391,7 @@ public class Calculator {
 		btn_Equals.setBounds(150, 366, 60, 60);
 		frame.getContentPane().add(btn_Equals);
 
-		// Plus/Minus Button
+		// Plus or Minus Button
 		JButton btn_PlusMinus = new JButton("±");
 		btn_PlusMinus.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
